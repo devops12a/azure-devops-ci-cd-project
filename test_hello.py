@@ -14,4 +14,4 @@ def teardown_function(function):
 #	assert add(test_hello_add.x) == 12
 
 def test_hello_substract():
-	assert substract(test_hello_substract.x= == 9
+	assert substract(test_hello_substract.x) == 9
