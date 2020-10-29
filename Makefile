@@ -3,7 +3,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv createtest_hello.py
+	python -m pytest -vv test_hello.py
 
 lint:
 	pylint --disable=R,C,W0311 hello.py
