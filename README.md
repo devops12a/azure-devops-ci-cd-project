@@ -32,62 +32,7 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 		•	Now, back to your Azure cloud shell and run: git clone git@github.com:your-username/your-repo.git to clone your project into Azure Cloud Shell.
 		You should get it like this:
 		![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/project_cloning.png)
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	2. Create Project Scaffolding
 You will create a Makefile file, requirements.txt, the Python virtual Environment, a script file and a test file. Follow these steps:
 •	Into your Azure cloud shell, and into your repo; cd <your-repo>
