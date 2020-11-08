@@ -23,8 +23,7 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 	1.	Create the Cloud-Based Development Environment
 	•	In your Microsoft Azure, launch the Azure cloud Shell environment (by clicking on the icon shown in the image).
   	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/azure_cloud_shell.png)
-
-
+	
 	•	Create a folder .ssh_project by running mkdir .ssh_project 
 	This folder will contain the ssh-keys that you will soon create.
 	•	Create the ssh-keys, run:
@@ -34,29 +33,6 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 	•	Now, back to your Azure cloud shell and run: git clone git@github.com:<your-username>/<your-repo>. git to clone your project into Azure Cloud Shell.
 		You should get it like this:
 	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/project_cloning.png)
-	
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	2.	Create Project Scaffolding
 		You will create a Makefile file, requirements.txt, the Python virtual Environment, a script file and a test file. Follow these steps:
 		•	Into your Azure cloud shell, and into your repo; cd <your-repo>
@@ -82,23 +58,7 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 	3.	Local Test
 		Now running make all, a command from Makefile will install lint and test code. This step ensure that we are not going to push a wrong code to GitHub.
 		After running make all, you should get a passing test like this:
-
 		![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/passed_test.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	4.	Configure GitHub Actions
 		The GitHub Actions from GitHub will help to perform the Continuous Integration remotely by testing the project upon change events. To configure GitHub Actions, 		follow these steps:
 		•	Into your repo, click on: go to Actions and set up an action
@@ -108,34 +68,11 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 		•	Now it’s going to do a build and look at the configuration file and run the commands on every single change your repo.
 		•	The build of GitHub Actions should pass and looks like this:
 			![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/passing_GitHub_Actions_build.png)
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
 	5.	Verify Remote Tests pass
 		•	Lint and test steps pass:
 		![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/test.png)
-
-
-
-
-
-
-
-
-
 		•	And the GitHub Actions badge: 
-		https://github.com/devops12a/azure-devops-ci-cd-project/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg
+			https://github.com/devops12a/azure-devops-ci-cd-project/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg
 
 	6.	Continuous Delivery on Azure
 		This will involve setting up Azure Pipelines to deploy the Flask starter code to Azure App Services.
@@ -162,10 +99,6 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 				./make_predict_azure_app.sh
 			3.	You should get a value of the prediction:
 				![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/prediction%20value.png)
-			
-
-
-
 		•	Make Continuous Delivery
 			1.	To deploy to Azure App Service from Azure Pipelines, you need to establish a service connection between the two services.
 			2.	Go to  dev.azure.com and Sign in to Azure DevOps (To simplify the service connection, use the same email address for Azure DevOps as you use for 				 Azure)
