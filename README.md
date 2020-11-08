@@ -101,4 +101,31 @@ chmod 744 make_predict_azure_app.sh
 3.	You should get a value of the prediction:
 	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/prediction%20value.png)
 	
+•	Make Continuous Delivery
+1.	To deploy to Azure App Service from Azure Pipelines, you need to establish a service connection between the two services.
+2.	Go to  [dev.azure.com](https://azure.microsoft.com/en-us/services/devops/?nav=min) and Sign in to Azure DevOps (To simplify the service connection, use the same email address for Azure DevOps as you use for Azure)
+3.	Create a new project
+Set a name and a description.
+4.	From the new project page, select Project settings from the left navigation or manage your services.
+5.	On the Project Settings page, select Pipelines / Service connections, then select Create service connection, and then select Azure Resource Manager from the dropdown.
+6.	Next Service principal (automatic), so Subscription in Scope level.
+7.	Give the connection a name and a description (Make note of the name to use later in the pipeline).
+Then, save
+And voilà, your service-connection-name connection of type Azure Resource Manager is ready for azure Pipelines to use from the project.
+8.	Now, we enable a continuous deployment with Azure Pipelines which allow us to have a deep integration with deploying code automatically.
+•	Go to Azure DevOps, then your project (which you set in pkt. 3)
+•	From your project page left navigation, select Pipelines
+•	Then, click on Create Pipeline
+•	On the Where is your code? screen, select GitHub
+•	On the Select a repository screen, select the repository that contains your app
+•	You may be prompted to enter your GitHub password again as a confirmation, and then GitHub prompts you to install the Azure Pipelines extension
+•	On the Configure your pipeline screen, select Python to Linux Web App on Azure, your new pipeline appears. When prompted, select the Azure subscription in which you created your Web App
+•	Select Continue, then:
+•	Select the Web App name
+•	Select Validate and configure
+This will be commit it directly into your GitHub repo, and it will run like GitHub Actions.
+•	Azure Pipelines creates an azure-pipelines.yml that defines your CI/CD pipeline as a series of stages, jobs, and steps (same as GitHub Actions), where each step contains the details for different tasks and scripts.
+
+•	And you run your pipeline, you should get a successful run of the project (even if there have been changes), like this:
+	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/successful_run_az_pipelines.png)
 
