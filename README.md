@@ -22,7 +22,7 @@ The yearly spreadsheet has helped me to make a plan for the future, up to a year
 Now back to our project Building a CI/CD Pipeline, after you have collected your dependencies, you start the project first by making your local continuous integration step using these steps:
 1.	Create the Cloud-Based Development Environment
 •	In your Microsoft Azure, launch the Azure cloud Shell environment (by clicking on the icon shown in the image below).
-  
+  	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/azure_cloud_shell.png)
 
 
 •	Create a folder .ssh_project by running mkdir .ssh_project 
