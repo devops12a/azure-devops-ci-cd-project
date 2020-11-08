@@ -23,110 +23,14 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 	1.	Create the Cloud-Based Development Environment
 	•	In your Microsoft Azure, launch the Azure cloud Shell environment (by clicking on the icon shown in the image).
   	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/azure_cloud_shell.png)
-	
 	•	Create a folder .ssh_project by running mkdir .ssh_project 
 	This folder will contain the ssh-keys that you will soon create.
 	•	Create the ssh-keys, run:
-		ssh-keygen -t rsa -b 4096 -C <your-Azure-account-email>
+	•	ssh-keygen -t rsa -b 4096 -C <your-Azure-account-email>
 	•	copy your public-key from the folder .ssh_project after yuo run: cat id_rsa.pub
 	•	To upload the key to your GitHub account, into your GitHub account: settings/SSH and GPG keys/new SSH key - set a title, paste your key and click on Add SSH key
 	•	Now, back to your Azure cloud shell and run: git clone git@github.com:<your-username>/<your-repo>. git to clone your project into Azure Cloud Shell.
 		You should get it like this:
 	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/project_cloning.png)
-	2.	Create Project Scaffolding
-		You will create a Makefile file, requirements.txt, the Python virtual Environment, a script file and a test file. Follow these steps:
-		•	Into your Azure cloud shell, and into your repo; cd <your-repo>
-		•	touch Makefile - create file named Makefile
-		•	vim Makefile - edit the file
-		•	touch requirements.txt
-		•	vim requirements.txt
-		•	Then; git add Makefile requirements.txt
-		•	git commit -m "adding Makefile and requirements.txt"
-		•	git push
-		•	Create Python virtual Environment, run: 
-			•	python3 -m venv ~/.<your-repo>
-			•	then, run: source ~/.<your-repo>/bin/activate
-			•	Azure cloud shell becomes:
-				(.<your-repo>) dev@Azure:~/ <your-repo>/$
-		•	Create the script file (hello.py) and test file (test_hello.py):
-			•	touch hello.py
-			•	vim hello.py
-			•	git add test_hello.py hello.py
-			•	git commit -m "adding the project script file and the test file"
-			•	git push
-
-	3.	Local Test
-		Now running make all, a command from Makefile will install lint and test code. This step ensure that we are not going to push a wrong code to GitHub.
-		After running make all, you should get a passing test like this:
-		![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/passed_test.png)
-	4.	Configure GitHub Actions
-		The GitHub Actions from GitHub will help to perform the Continuous Integration remotely by testing the project upon change events. To configure GitHub Actions, 		follow these steps:
-		•	Into your repo, click on: go to Actions and set up an action
-		•	Click on set up a workflow yourself (looks like Hello world based action)
-		•	Replace the main.yml with pythonapp.yml (see my repo)
-		•	So, go ahead and Start commit, and Commit new file
-		•	Now it’s going to do a build and look at the configuration file and run the commands on every single change your repo.
-		•	The build of GitHub Actions should pass and looks like this:
-			![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/passing_GitHub_Actions_build.png)
-	5.	Verify Remote Tests pass
-		•	Lint and test steps pass:
-		![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/test.png)
-		•	And the GitHub Actions badge: 
-			https://github.com/devops12a/azure-devops-ci-cd-project/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg
-
-	6.	Continuous Delivery on Azure
-		This will involve setting up Azure Pipelines to deploy the Flask starter code to Azure App Services.
-		How to make this final step? - follow these steps:
-
-		•	Get the Flask starter code and add it to tour project
-		•	From your Azure Cloud Shell, move into your repo-folder:
-			(.<your-repo>) dev@Azure:~/<your-repo>$
-		•	make install to install Flask, pandas and scikit-learn (see requirements.txt)
-			Flask can create a REST API, so you can send data and receive a prediction as a response.
-		•	Create an app service and initially deploy it using cloud Shell, through:
-			1.	Create a resource-group:
-				az group create -l your-region -n your-r-grp
-			2.	Confirm that you are logged in in your work Azure account (just to be sure!)
-				az account set -s <subscription-id>
-			3.	az webapp up -l your-region -n app-name -g your-r-grp --sku F1
-				after a while, you can launch the app at https://app-name.azurewebsites.net
-				From the Cloud shell. I can look the name of this application and if I open the link in a new browser, I can see that it’s actually a running 					service and also available via a predict API (see make_predict_azure_app.sh)
-				Put your app name in make_predict_azure_app.sh (last line)
-		•	To verify that the server is serving the traffic correctly, you have to run the file make_predict_azure_app.sh and you should get a value of the 				prediction.
-			1.	Change the permission of make_predict_azure_app.sh, run:
-				chmod 744 make_predict_azure_app.sh
-			2.	Then go ahead, and run the file:
-				./make_predict_azure_app.sh
-			3.	You should get a value of the prediction:
-				![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/prediction%20value.png)
-		•	Make Continuous Delivery
-			1.	To deploy to Azure App Service from Azure Pipelines, you need to establish a service connection between the two services.
-			2.	Go to  dev.azure.com and Sign in to Azure DevOps (To simplify the service connection, use the same email address for Azure DevOps as you use for 				 Azure)
-			3.	Create a new project
- 				Set a name and a description.
-			4.	From the new project page, select Project settings from the left navigation or manage your services.
-			5.	On the Project Settings page, select Pipelines > Service connections, then select Create service connection, and then select Azure Resource 					Manager from the dropdown.
-			6.	Next Service principal (automatic), so Subscription in Scope level.
-			7.	Give the connection a name and a description (Make note of the name to use later in the pipeline).
-				Then, save
-				And voilà, your service-connection-name connection of type Azure Resource Manager is ready for azure Pipelines to use from the project.
-			8.	Now, we enable a continuous deployment with Azure Pipelines which allow us to have a deep integration with deploying code automatically.
-				•	Go to Azure DevOps, then your project (which you set in pkt. 3)
-				•	From your project page left navigation, select Pipelines
-				•	Then, click on Create Pipeline
-				•	On the Where is your code? screen, select GitHub
-				•	On the Select a repository screen, select the repository that contains your app
-				•	You may be prompted to enter your GitHub password again as a confirmation, and then GitHub prompts you to install the Azure Pipelines 						extension
-				•	On the Configure your pipeline screen, select Python to Linux Web App on Azure, your new pipeline appears. When prompted, select the 						Azure subscription in which you created your Web App
-				•	Select Continue, then:
-					•	Select the Web App name
-					•	Select Validate and configure
-						This will be commit it directly into your GitHub repo, and it will run like GitHub Actions.
-				•	Azure Pipelines creates an azure-pipelines.yml that defines your CI/CD pipeline as a series of stages, jobs, and steps (same as GitHub 						Actions), where each step contains the details for different tasks and scripts.
-
-				•	And you run your pipeline, you should get a successful run of the project (even if there have been changes), like this:
-					![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/successful_run_az_pipelines.png)
-					
-
-
+	
 
