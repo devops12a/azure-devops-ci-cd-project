@@ -33,4 +33,81 @@ Now back to our project Building a CI/CD Pipeline, after you have collected your
 		You should get it like this:
 		![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/project_cloning.png)
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	2. Create Project Scaffolding
+You will create a Makefile file, requirements.txt, the Python virtual Environment, a script file and a test file. Follow these steps:
+•	Into your Azure cloud shell, and into your repo; cd <your-repo>
+•	touch Makefile - create file named Makefile
+•	vim Makefile - edit the file
+•	touch requirements.txt
+•	vim requirements.txt
+•	Then; git add Makefile requirements.txt
+•	git commit -m "adding Makefile and requirements.txt"
+•	git push
+•	Create Python virtual Environment, run: 
+•	python3 -m venv ~/.your-repo
+•	then, run: source ~/.<your-repo>/bin/activate
+•	Azure cloud shell becomes:
+(.your-repo) dev@Azure:~/your-repo/$
+•	Create the script file (hello.py) and test file (test_hello.py):
+•	touch hello.py
+•	vim hello.py
+•	git add test_hello.py hello.py
+•	git commit -m "adding the project script file and the test file"
+•	git push
+
 
