@@ -21,7 +21,7 @@ Same for the yearly spreadsheet, I have split it into four quarters and I just i
 The yearly spreadsheet has helped me to make a plan for the future, up to a year. Especially if I have multiple projects to manage.  
 Now back to our project Building a CI/CD Pipeline, after you have collected your dependencies, you start the project first by making your local continuous integration step using these steps:
 1.	Create the Cloud-Based Development Environment
-•	In your Microsoft Azure, launch the Azure cloud Shell environment (by clicking on the icon shown in the image below).
+•	In your Microsoft Azure, launch the Azure cloud Shell environment (by clicking on the icon shown in the image).
   	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/azure_cloud_shell.png)
 
 
@@ -32,7 +32,9 @@ This folder will contain the ssh-keys that you will soon create.
 •	copy your public-key from the folder .ssh_project after yuo run: cat id_rsa.pub
 •	To upload the key to your GitHub account, into your GitHub account: settings/SSH and GPG keys/new SSH key - set a title, paste your key and click on Add SSH key
 •	Now, back to your Azure cloud shell and run: git clone git@github.com:<your-username>/<your-repo>. git to clone your project into Azure Cloud Shell.
-You should get it like this:
+	You should get it like this:
+	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/project_cloning.png)
+	
 
 
 
