@@ -1,7 +1,6 @@
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt &&\
-		pip install locust==1.3.0
+		pip install -r requirements.txt
 		
 test:
 	python -m pytest -vv test_hello.py
