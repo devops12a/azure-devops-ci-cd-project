@@ -133,6 +133,13 @@ This will be commit it directly into your GitHub repo, and it will run like GitH
 
 •	And This is a screenshot of the Azure app service from the Azure portal, as you can see; it's a successfully deploying of the web app using Azure pipelines:
 	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/app_successfully_deployed.png)
+•	After installing Locust ( a load-testing tool), with this command and from the folder where the code is:
+	pip3 install locust
+	Running the load test against the deployed app:
+	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/locust_against_app.png)
+	Running the load test against /predict the request of the application:
+	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/locust_against_predict.png)
+	
 This is the link to the uploaded video to Youtube: [Building a CI/CD Pipeline](https://youtu.be/FPKWJZ80xo8)
 
 
