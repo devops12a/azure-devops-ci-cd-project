@@ -18,7 +18,9 @@ Before you begin, you can take a look to my workflow through the Trello board; h
 In addition to this, I have created a quarterly and yearly spreadsheet (see my repo: “project2_Q4_2020.xlsx” and “project2_yearly_20_21”) to help me focusing on each ticket that represent a distinct task to be completed in a specified block of time.
 In the quarterly spreadsheet, my goal was to make this dream-example-project “Build a Machine Learning with Python and Flask using React”. The frontend is developed in React and I thought it include a single page with a form to submit inputs. On the other hand, the backend is developed in Flask (written in Python). This quarterly spreadsheet is an example of how effective the spreadsheet can be to organize you work and achieve your goal. You may not be following it exactly; however, it is an important tool in Agile planning.
 Same for the yearly spreadsheet, I have split it into four quarters and I just implemented the fourth quarter with the example-project form my quarterly spreadsheet. The rest of the quarters can be implemented as the fourth.
-The yearly spreadsheet has helped me to make a plan for the future, up to a year. Especially if I have multiple projects to manage.  
+The yearly spreadsheet has helped me to make a plan for the future, up to a year. Especially if I have multiple projects to manage.
+Before starting the project. I will summarize the concept of the project in a diagram:
+![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/Architectural_Diagram_project.png)
 Now back to our project Building a CI/CD Pipeline, after you have collected your dependencies, you start the project first by making your local continuous integration step using these steps:
 	1.	Create the Cloud-Based Development Environment
 		•	In your Microsoft Azure, launch the Azure cloud Shell environment (by clicking on the icon shown in the image).
