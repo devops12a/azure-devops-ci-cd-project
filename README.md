@@ -141,7 +141,7 @@ This will be commit it directly into your GitHub repo, and it will run like GitH
 	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/locust_against_predict.png)
 
 The CI/CD pipelines is very benefit when used correctly. To improve the project in the future, it is wise to secure the pipelines like using a VPN and access control.
-Another improvement is to select a fastest tests to do, and make sure to run local tests. GitHub Actions to perform Continuous Delivery is a good improvment for the future too against of the day Azure Pipelines.  
+Another improvement is to select the fastest tests to do, and make sure to run local tests. GitHub Actions to perform Continuous Delivery is also a good improvment for the future against todays Azure Pipelines.  
 
 This is the link to the uploaded video to Youtube: [Building a CI/CD Pipeline](https://youtu.be/FPKWJZ80xo8)
 
