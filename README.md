@@ -128,4 +128,7 @@ This will be commit it directly into your GitHub repo, and it will run like GitH
 
 •	And you run your pipeline, you should get a successful run of the project (even if there have been changes), like this:
 	![alt text](https://github.com/devops12a/azure-devops-ci-cd-project/blob/main/images/successful_run_az_pipelines.png)
+	
+This is the link to the uploaded video to Youtube: [Building a CI/CD Pipeline](https://youtu.be/FPKWJZ80xo8)
+
 
